@@ -97,7 +97,7 @@
       git
       vscode
       keepassxc
-      dropbox
+      # dropbox
       signal-desktop
       discord
       ksnip
