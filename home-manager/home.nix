@@ -11,5 +11,7 @@
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
     htop
+    whatsapp-for-linux
+    ledger-live-desktop
   ];
 }
