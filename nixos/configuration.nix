@@ -33,10 +33,10 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   # flakes stuff from Isaac
-  # nix = {
-  # package = pkgs.nixFlakes;
-  # extraOptions = "experimental-features = nix-command flakes";
-  # };
+  nix = {
+  package = pkgs.nixFlakes;
+  extraOptions = "experimental-features = nix-command flakes";
+  };
 
   # bootloader from Isaac
   # boot.loader.svstemd-boot.enable = true;
