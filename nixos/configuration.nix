@@ -107,6 +107,7 @@
       mongodb-compass
       zoom-us
       gimp
+      gh # Github
     #  thunderbird
     ];
   };
