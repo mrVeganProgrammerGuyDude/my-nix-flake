@@ -2,6 +2,7 @@
   # Importing zsh.nix from the specified location
   imports = [
     ./apps/zsh.nix
+    ./apps/i3.nix
   ];
 
   # Setting up zsh (this line is commented out in the original code)
