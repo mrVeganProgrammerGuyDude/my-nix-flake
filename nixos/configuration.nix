@@ -55,10 +55,48 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+  # Configure keymap in X11 (this is the old one that works)
+ # services.xserver = {
+ #   layout = "us";
+ #   xkbVariant = "";
+ # };
+
+# Neew stuff from https://blog.neerajadhav.in/how-to-install-i3wm-on-nixos-a-step-by-step-guide
+  services = {
+    xserver = {
+      layout = "us";
+      xkbVariant = "";
+      enable = true;
+      windowManager.i3 = {
+        enable = true;
+        extraPackages = with pkgs; [
+          i3status
+        ];
+      };
+      desktopManager = {
+        xterm.enable = false;
+        xfce = {
+          enable = true;
+          noDesktop = true;
+          enableXfwm = false;
+        };
+      };
+      displayManager = {
+        lightdm.enable = true;
+        defaultSession = "xfce+i3";
+      };
+    };
+    gvfs.enable = true;
+    gnome.gnome-keyring.enable = true;
+    blueman.enable = true;
+    pipewire = {
+      enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      pulse.enable = true;
+    };
   };
 
   # Enable CUPS to print documents.
@@ -109,6 +147,7 @@
       gimp
       gh # Github
     #  thunderbird
+	gnome.gnome-keyring  # This was to try and get i3 going somehow...
     ];
   };
 
