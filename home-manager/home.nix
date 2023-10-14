@@ -17,6 +17,9 @@
   home.packages = with pkgs; [
     htop                        
     whatsapp-for-linux          
-    ledger-live-desktop         
+    ledger-live-desktop
+    alacritty
+    flameshot 
+    dmenu
   ];
 }
